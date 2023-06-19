@@ -14,7 +14,7 @@ pub fn grayscale(encoded_file: &str) -> String{
 
     let mut buffer = Vec::new();
     img.write_to(&mut buffer, Png).unwrap();
-
+    log(&"Image written".into());
     let encoded_image = encode(&buffer);
     let data_url = format!("data:image/png;base64,{}", encoded_image);
     return data_url;
